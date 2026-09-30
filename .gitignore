@@ -1,0 +1,18 @@
+# build output
+bin/
+build/
+*.o
+*.d
+*.exe
+
+# runtime records (the directory itself is kept via .gitkeep)
+data/records/*.dat
+data/records/*.tmp
+
+# editors and OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
