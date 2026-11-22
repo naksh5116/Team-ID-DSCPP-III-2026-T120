@@ -1,0 +1,193 @@
+/* app.css - VitalRoute Web. The same design rules as the Qt GUI (DESIGN.md):
+ * white work surface, #F4F5F7 panels, #D9DCE1 borders, one accent for
+ * selection and primary actions, ESI colours only in ESI badges, the system
+ * font, monospace for IDs and amounts, radius 0-2px, no shadows or gradients. */
+
+:root {
+  --surface: #FFFFFF;
+  --panel: #F4F5F7;
+  --border: #D9DCE1;
+  --control: #8C939D;
+  --text: #1B1F24;
+  --text-muted: #5B636E;
+  --text-disabled: #8A9099;
+  --hover: #ECEEF1;
+  --pressed: #E2E5E9;
+  --accent: #143769;
+  --accent-hover: #1D4A87;
+  --on-accent: #FFFFFF;
+  --corridor: #9AA1AB;
+  --esi1: #C62828; --esi2: #E65100; --esi3: #F9A825; --esi4: #2E7D32; --esi5: #1565C0;
+  --mono: Consolas, "Cascadia Mono", "DejaVu Sans Mono", "Liberation Mono", monospace;
+  --gap: 8px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font: 14px/1.4 system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+}
+h1, h2, h3 { font-weight: 600; margin: 0; }
+h1 { font-size: 1.15em; }
+h2 { font-size: 1em; }
+h3 { font-size: 1em; }
+.mono, code { font-family: var(--mono); }
+.hint { color: var(--text-muted); }
+.right { text-align: right; }
+[hidden] { display: none !important; }
+
+/* ---- page frame -------------------------------------------------------- */
+.topbar {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 6px 12px; background: var(--panel); border-bottom: 1px solid var(--border);
+}
+.topbar .title { font-weight: 600; }
+.topbar .spacer { flex: 1; }
+.topbar a { color: var(--text); }
+main { flex: 1; min-height: 0; overflow: auto; }
+
+.statusbar {
+  display: flex; flex-wrap: wrap; align-items: center;
+  background: var(--panel); border-top: 1px solid var(--border);
+  font-size: 0.95em;
+}
+.statusbar > span { padding: 3px 10px; border-left: 1px solid var(--border); white-space: nowrap; }
+.statusbar .message { flex: 1 1 260px; border-left: none; white-space: normal; min-width: 0; }
+.statusbar .message.error { font-weight: 600; }
+/* Phones: keep the message, emergency count, next patient and Live; drop the
+ * OPD count, bed counts and role so the bar stays one or two lines. */
+@media (max-width: 600px) {
+  .statusbar > span { padding: 2px 8px; }
+  .statusbar .message:empty { display: none; }
+  .statusbar > span:nth-child(3), .statusbar > span:nth-child(5),
+  .statusbar > span:nth-child(6), .statusbar > span:nth-child(7) { display: none; }
+}
+
+/* ---- tabs --------------------------------------------------------------- */
+.tabs { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--border); background: var(--surface); }
+.tabs button {
+  font: inherit; color: var(--text); background: var(--panel);
+  border: 1px solid var(--border); border-bottom: none; margin: 4px -1px 0 0;
+  padding: 5px 12px; cursor: pointer; border-radius: 0;
+}
+.tabs button:hover { background: var(--hover); }
+.tabs button[aria-selected="true"] { background: var(--surface); border-top: 2px solid var(--accent); padding-top: 4px; }
+.tabpanel { padding: 0; }
+
+/* ---- layout ------------------------------------------------------------- */
+.cols { display: grid; gap: 0; grid-template-columns: minmax(300px, 2fr) minmax(320px, 3fr); }
+.cols3 { display: grid; gap: 0; grid-template-columns: minmax(280px, 2fr) minmax(320px, 3fr) minmax(280px, 2fr); }
+.cols > *, .cols3 > * { min-width: 0; border-right: 1px solid var(--border); }
+.cols > *:last-child, .cols3 > *:last-child { border-right: none; }
+.pad { padding: 8px 12px; }
+.stack > * + * { margin-top: 12px; }
+@media (max-width: 900px) {
+  .cols, .cols3 { grid-template-columns: 1fr; }
+  .cols > *, .cols3 > * { border-right: none; border-bottom: 1px solid var(--border); }
+}
+
+/* ---- groups and forms ----------------------------------------------------- */
+fieldset { border: 1px solid var(--border); margin: 0; padding: 8px 12px 12px; min-width: 0; }
+legend { font-weight: 600; padding: 0 4px; }
+.form { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 8px 12px; align-items: center; }
+.form > label { color: var(--text); }
+.form .full { grid-column: 1 / -1; }
+@media (max-width: 520px) { .form { grid-template-columns: 1fr; gap: 4px; } }
+
+input, select, textarea {
+  font: inherit; color: var(--text); background: var(--surface);
+  border: 1px solid var(--control); border-radius: 2px; padding: 4px 6px; width: 100%; min-width: 0;
+}
+input[type="checkbox"], input[type="radio"] { width: auto; accent-color: var(--accent); margin: 0 6px 0 0; }
+input:focus, select:focus, textarea:focus, button:focus-visible { outline: 1px solid var(--accent); border-color: var(--accent); }
+input:disabled, select:disabled { background: var(--panel); color: var(--text-disabled); border-color: var(--border); }
+input.id, .id { font-family: var(--mono); }
+
+button.btn {
+  font: inherit; color: var(--text); background: var(--surface);
+  border: 1px solid var(--control); border-radius: 2px; padding: 5px 12px; cursor: pointer;
+}
+button.btn:hover { background: var(--hover); }
+button.btn:active { background: var(--pressed); }
+button.btn.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+button.btn.primary:hover { background: var(--accent-hover); }
+button.btn:disabled { background: var(--panel); color: var(--text-disabled); border-color: var(--border); cursor: default; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.esi-choice { display: grid; grid-template-columns: auto auto 1fr; gap: 6px 8px; align-items: center; }
+.esi-choice label { white-space: nowrap; }
+
+/* ---- tables --------------------------------------------------------------- */
+.table-wrap { overflow: auto; border: 1px solid var(--border); max-height: 420px; }
+.table-wrap.tall { max-height: none; }
+table { border-collapse: collapse; width: 100%; }
+th {
+  position: sticky; top: 0; background: var(--panel); text-align: left; font-weight: 600;
+  padding: 4px 8px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); white-space: nowrap;
+}
+td { padding: 3px 8px; border-bottom: 1px solid var(--panel); white-space: nowrap; }
+tbody tr:hover { background: var(--hover); cursor: default; }
+tbody tr.selected, tbody tr.selected:hover { background: var(--accent); color: var(--on-accent); }
+td.wrap { white-space: normal; }
+td.empty { color: var(--text-muted); white-space: normal; }
+
+/* ---- ESI badge -------------------------------------------------------------- */
+.esi {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 1.45em; height: 1.45em; border-radius: 2px; font-weight: 700; color: #FFFFFF; margin-right: 6px;
+  vertical-align: middle; font-size: 0.95em;
+}
+.esi.l1 { background: var(--esi1); } .esi.l2 { background: var(--esi2); } .esi.l3 { background: var(--esi3); color: var(--text); }
+.esi.l4 { background: var(--esi4); } .esi.l5 { background: var(--esi5); }
+
+/* ---- record ---------------------------------------------------------------- */
+.record { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; }
+.record dt { color: var(--text); }
+.record dd { margin: 0; }
+.record-title { font-size: 1.15em; font-weight: 600; display: flex; align-items: center; }
+.result { background: var(--panel); border: 1px solid var(--border); padding: 6px 8px; white-space: pre-wrap; min-height: 5.5em; }
+.totals { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; margin-top: 6px; }
+.totals .strong { font-weight: 600; }
+
+/* ---- route map --------------------------------------------------------------- */
+.routemap { display: grid; grid-template-columns: minmax(0, 3fr) minmax(220px, 2fr); gap: 12px; }
+.routemap.vertical { grid-template-columns: 1fr; }
+@media (max-width: 900px) { .routemap { grid-template-columns: 1fr; } }
+.floor-tabs { display: flex; flex-wrap: wrap; gap: 0; margin-bottom: 4px; }
+.floor-tabs button { font: inherit; background: var(--panel); border: 1px solid var(--border); margin-right: -1px; padding: 3px 10px; cursor: pointer; color: var(--text); }
+.floor-tabs button[aria-selected="true"] { background: var(--surface); border-top: 2px solid var(--accent); }
+.map-svg { width: 100%; height: auto; aspect-ratio: 16 / 10; border: 1px solid var(--border); background: var(--surface); display: block; }
+.map-svg text {
+  font-family: system-ui, "Segoe UI", sans-serif; fill: var(--text-muted);
+  paint-order: stroke; stroke: var(--surface); stroke-width: 0.35px; stroke-linejoin: round;   /* halo over route lines */
+}
+.map-svg text.major { fill: var(--text); font-weight: 600; }
+.steps { margin: 0; padding: 0; list-style: none; border: 1px solid var(--border); max-height: 360px; overflow: auto; }
+.steps li { padding: 4px 8px; border-bottom: 1px solid var(--panel); cursor: pointer; }
+.steps li:hover { background: var(--hover); }
+.steps li.selected { background: var(--accent); color: var(--on-accent); }
+.route-title { font-weight: 600; margin-bottom: 4px; }
+.route-summary { margin-top: 6px; }
+
+/* ---- wall display (Patient page, full screen) ---------------------------------- */
+body.wall .topbar, body.wall .statusbar, body.wall .not-wall { display: none !important; }
+body.wall .wall-header { display: block !important; }
+.wall-header { display: none; padding: 12px 16px 4px; }
+.wall-header h1 { font-size: 1.8em; }
+body.wall .steps { font-size: 1.8em; max-height: none; }
+body.wall .route-title { font-size: 1.8em; }
+body.wall .route-summary { font-size: 2.2em; font-weight: 600; }
+body.wall .map-svg { aspect-ratio: auto; height: 40vh; }
+
+/* ---- launcher ------------------------------------------------------------------- */
+.launcher { max-width: 720px; padding: 16px; }
+.launcher .roles { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.launcher .roles a {
+  display: inline-block; padding: 8px 16px; border: 1px solid var(--control); border-radius: 2px;
+  color: var(--text); text-decoration: none; background: var(--surface);
+}
+.launcher .roles a:hover { background: var(--hover); }
+.links li { font-family: var(--mono); }

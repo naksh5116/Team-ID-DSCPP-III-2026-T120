@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VitalRoute</title>
+<meta name="description" content="VitalRoute hospital triage simulator: choose a role window.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="topbar"><span class="title">VitalRoute</span></header>
+<main>
+  <div class="launcher stack">
+    <div>
+      <h1>Open a role window</h1>
+      <p class="hint">Each role opens in its own browser tab. Open as many as you like, on this computer or on other
+        devices: they all work on the same hospital, and a change made in one appears in the others straight away.</p>
+    </div>
+    <nav class="roles" aria-label="Roles">
+      <a href="nurse.html" target="_blank" rel="noopener">Nurse</a>
+      <a href="doctor.html" target="_blank" rel="noopener">Doctor</a>
+      <a href="patient.html" target="_blank" rel="noopener">Patient</a>
+      <a href="admin.html" target="_blank" rel="noopener">Super Admin</a>
+    </nav>
+    <fieldset>
+      <legend>Nurse</legend>
+      <p class="hint">Registers emergency and outpatient (OPD) patients, watches the waiting lists and runs the transfer desk.</p>
+    </fieldset>
+    <fieldset>
+      <legend>Doctor</legend>
+      <p class="hint">Treats the next patient, sees the walking route to the assigned bed, keeps patient records, books operation theatres.</p>
+    </fieldset>
+    <fieldset>
+      <legend>Patient</legend>
+      <p class="hint">Read-only: one patient's record, bill and walking directions. Has a full-screen wall display for a ward screen.</p>
+    </fieldset>
+    <fieldset>
+      <legend>Super Admin</legend>
+      <p class="hint">Everything, plus billing and discharge, admissions by date, staff, indexes, undo, save and reload.</p>
+    </fieldset>
+    <fieldset>
+      <legend>Other devices</legend>
+      <div id="links" class="hint">Checking…</div>
+      <p class="hint" id="clients"></p>
+    </fieldset>
+    <p class="hint"><strong>There is no sign-in.</strong> Anyone who can open this page can change the data, so run the
+      server only on a network you trust. This is a teaching simulator, not for real patient data.</p>
+  </div>
+</main>
+<script type="module">
+  import { api, h } from "./app.js";
+  const links = document.getElementById("links");
+  const clients = document.getElementById("clients");
+  const refresh = async () => {
+    try {
+      const p = await api.get("/api/ping");
+      links.replaceChildren(p.links.length
+        ? h("div", {}, "On a phone, tablet or another computer on the same network, open:",
+            h("ul", { class: "links" }, p.links.map(l => h("li", {}, h("a", { href: l, text: l })))))
+        : h("div", { text: "This server accepts this computer only (started with --local-only). Restart it without --local-only to let other devices on the network join." }));
+      clients.textContent = `Open role windows right now: ${p.eventClients}.`;
+    } catch (e) { links.textContent = "The VitalRoute server is not answering. Is vitalroute_web still running?"; }
+  };
+  refresh();
+  setInterval(refresh, 5000);   // only the window count; data changes come over the event stream
+</script>
+</body>
+</html>

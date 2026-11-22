@@ -1,0 +1,324 @@
+/* style.qss - the only stylesheet. Rules and tokens: DESIGN.md.
+ * Words starting with an at-sign are design tokens; Theme::styleSheet()
+ * replaces each one with its value from Theme.cpp.
+ * No font sizes or families here: the system UI font is used throughout.
+ * Lengths are logical pixels, so they scale with each monitor. */
+
+QMainWindow, QDialog {
+    background: @surface;
+    color: @text;
+}
+
+QMenuBar {
+    background: @panel;
+    border-bottom: 1px solid @border;
+}
+QMenuBar::item {
+    padding: 4px 8px;
+    background: transparent;
+}
+QMenuBar::item:selected {
+    background: @hover;
+}
+QMenu {
+    background: @surface;
+    border: 1px solid @border;
+    padding: 4px 0;
+}
+QMenu::item {
+    padding: 4px 24px 4px 12px;
+}
+QMenu::item:selected {
+    background: @accent;
+    color: @onAccent;
+}
+QMenu::separator {
+    height: 1px;
+    background: @border;
+    margin: 4px 0;
+}
+
+QStatusBar {
+    background: @panel;
+    border-top: 1px solid @border;
+    color: @text;
+}
+QStatusBar::item {
+    border: none;
+}
+QStatusBar QLabel {
+    padding: 2px 8px;
+}
+QStatusBar QLabel[statusField="true"] {
+    border-left: 1px solid @border;
+}
+
+/* ---- text roles ------------------------------------------------------ */
+QLabel[textRole="heading"] {
+    font-weight: 600;
+}
+QLabel[textRole="hint"] {
+    color: @textMuted;
+}
+QLabel[textRole="error"] {
+    font-weight: 600;
+}
+
+/* ---- panels and groups ----------------------------------------------- */
+QFrame[panel="true"] {
+    background: @panel;
+    border: 1px solid @border;
+}
+QGroupBox {
+    background: @surface;
+    border: 1px solid @border;
+    border-radius: 0;
+    margin-top: 12px;
+    padding: 12px 8px 8px 8px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 8px;
+    padding: 0 4px;
+    font-weight: 600;
+}
+
+/* ---- buttons --------------------------------------------------------- */
+QPushButton {
+    background: @surface;
+    color: @text;
+    border: 1px solid @control;
+    border-radius: 2px;
+    padding: 4px 12px;
+}
+QPushButton:hover {
+    background: @hover;
+}
+QPushButton:pressed {
+    background: @pressed;
+}
+QPushButton:focus {
+    border: 1px solid @accent;
+}
+QPushButton[primary="true"] {
+    background: @accent;
+    color: @onAccent;
+    border: 1px solid @accent;
+}
+QPushButton[primary="true"]:hover {
+    background: @accentHover;
+}
+QPushButton[primary="true"]:pressed {
+    background: @accentPressed;
+}
+QPushButton[primary="true"]:focus {
+    border: 1px solid @text;
+}
+QPushButton:disabled, QPushButton[primary="true"]:disabled {
+    background: @panel;
+    color: @textDisabled;
+    border: 1px solid @border;
+}
+
+/* ---- inputs ---------------------------------------------------------- */
+QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox, QDateEdit, QPlainTextEdit {
+    background: @surface;
+    color: @text;
+    border: 1px solid @control;
+    border-radius: 2px;
+    padding: 3px 6px;
+    selection-background-color: @accent;
+    selection-color: @onAccent;
+}
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus,
+QDateEdit:focus, QPlainTextEdit:focus {
+    border: 1px solid @accent;
+}
+QLineEdit:disabled, QSpinBox:disabled, QDoubleSpinBox:disabled, QComboBox:disabled,
+QDateEdit:disabled, QPlainTextEdit:disabled {
+    background: @panel;
+    color: @textDisabled;
+    border: 1px solid @border;
+}
+/* Spin box, date and combo box buttons: flat areas inside the border.
+ * The arrows are images Theme draws from the text colours (imgArrow tokens). */
+QSpinBox, QDoubleSpinBox {
+    padding-right: 22px;
+}
+QSpinBox::up-button, QDoubleSpinBox::up-button {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px;
+    border-left: 1px solid @border;
+    border-bottom: 1px solid @border;
+    background: @panel;
+}
+QSpinBox::down-button, QDoubleSpinBox::down-button {
+    subcontrol-origin: padding;
+    subcontrol-position: bottom right;
+    width: 18px;
+    border-left: 1px solid @border;
+    background: @panel;
+}
+QSpinBox::up-button:hover, QDoubleSpinBox::up-button:hover,
+QSpinBox::down-button:hover, QDoubleSpinBox::down-button:hover {
+    background: @hover;
+}
+QSpinBox::up-button:pressed, QDoubleSpinBox::up-button:pressed,
+QSpinBox::down-button:pressed, QDoubleSpinBox::down-button:pressed {
+    background: @pressed;
+}
+QSpinBox::up-arrow, QDoubleSpinBox::up-arrow {
+    image: url(@imgArrowUp);
+    width: 8px;
+    height: 5px;
+}
+QSpinBox::down-arrow, QDoubleSpinBox::down-arrow {
+    image: url(@imgArrowDown);
+    width: 8px;
+    height: 5px;
+}
+QSpinBox::up-arrow:disabled, QSpinBox::up-arrow:off,
+QDoubleSpinBox::up-arrow:disabled, QDoubleSpinBox::up-arrow:off {
+    image: url(@imgArrowUpDisabled);
+}
+QSpinBox::down-arrow:disabled, QSpinBox::down-arrow:off,
+QDoubleSpinBox::down-arrow:disabled, QDoubleSpinBox::down-arrow:off {
+    image: url(@imgArrowDownDisabled);
+}
+QComboBox, QDateEdit {
+    padding-right: 24px;
+}
+QComboBox::drop-down, QDateEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 1px solid @border;
+    background: @panel;
+}
+QComboBox::down-arrow, QDateEdit::down-arrow {
+    image: url(@imgArrowDown);
+    width: 8px;
+    height: 5px;
+}
+QComboBox::down-arrow:disabled, QDateEdit::down-arrow:disabled {
+    image: url(@imgArrowDownDisabled);
+}
+/* Read-only text (treatment results): looks like a panel, not a field. */
+QPlainTextEdit[readOnly="true"] {
+    background: @panel;
+    border: 1px solid @border;
+}
+QComboBox QAbstractItemView {
+    background: @surface;
+    border: 1px solid @border;
+    selection-background-color: @accent;
+    selection-color: @onAccent;
+}
+
+/* ---- tables and lists ------------------------------------------------ */
+QTableView, QListView, QTreeView {
+    background: @surface;
+    color: @text;
+    border: 1px solid @border;
+    gridline-color: @border;
+    selection-background-color: @accent;
+    selection-color: @onAccent;
+}
+QTableView::item {
+    padding: 2px 6px;
+}
+QListView::item {
+    padding: 2px 6px;
+}
+QListView::item:hover {
+    background: @hover;
+}
+QListView::item:selected {
+    background: @accent;
+    color: @onAccent;
+}
+QHeaderView::section {
+    background: @panel;
+    color: @text;
+    border: none;
+    border-right: 1px solid @border;
+    border-bottom: 1px solid @border;
+    padding: 3px 6px;
+    font-weight: 600;
+}
+QTableCornerButton::section {
+    background: @panel;
+    border: none;
+    border-bottom: 1px solid @border;
+}
+
+/* ---- tabs ------------------------------------------------------------ */
+QTabWidget::pane {
+    border: 1px solid @border;
+    top: -1px;
+    background: @surface;
+}
+QTabBar::tab {
+    background: @panel;
+    color: @text;
+    border: 1px solid @border;
+    padding: 4px 12px;
+    margin-right: -1px;
+}
+QTabBar::tab:hover {
+    background: @hover;
+}
+QTabBar::tab:selected {
+    background: @surface;
+    border-top: 2px solid @accent;
+    border-bottom-color: @surface;
+}
+
+/* ---- splitters and scroll areas -------------------------------------- */
+QSplitter::handle {
+    background: @border;
+}
+QSplitter::handle:horizontal {
+    width: 1px;
+}
+QSplitter::handle:vertical {
+    height: 1px;
+}
+QScrollArea {
+    border: none;
+}
+
+QToolTip {
+    background: @surface;
+    color: @text;
+    border: 1px solid @border;
+    padding: 2px 4px;
+}
+
+/* ---- toolbar (Super Admin session actions: text only) ----------------- */
+QToolBar {
+    background: @panel;
+    border: none;
+    border-bottom: 1px solid @border;
+    padding: 2px 4px;
+    spacing: 4px;
+}
+QToolButton {
+    background: transparent;
+    color: @text;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 3px 10px;
+}
+QToolButton:hover {
+    background: @hover;
+    border: 1px solid @border;
+}
+QToolButton:pressed {
+    background: @pressed;
+}
+QToolButton:disabled {
+    color: @textDisabled;
+}

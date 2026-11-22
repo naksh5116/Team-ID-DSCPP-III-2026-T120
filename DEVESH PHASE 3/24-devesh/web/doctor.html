@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VitalRoute - Doctor</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<noscript>VitalRoute needs JavaScript.</noscript>
+<script type="module">
+  import { page, tabs } from "./app.js";
+  import { doctorsPanel, lookupPanel, theatresPanel, treatPanel } from "./panels.js";
+  page("Doctor", tabs([
+    { label: "Treatment", build: treatPanel },
+    { label: "Patient record", build: lookupPanel },
+    { label: "Operation theatres", build: theatresPanel },
+    { label: "Doctors on duty", build: doctorsPanel },
+  ]).element);
+</script>
+</body>
+</html>

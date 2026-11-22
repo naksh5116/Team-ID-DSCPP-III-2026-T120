@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VitalRoute - Patient</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<noscript>VitalRoute needs JavaScript.</noscript>
+<script type="module">
+  // Read-only: one patient's record, bill and walking directions. The wall
+  // display (button or F11) shows only the directions, large, and no name,
+  // for a screen in a corridor. ?id=VR-... opens a patient directly, so a
+  // wall screen can be bookmarked.
+  import { api, attempt, field, h, live, message, page, tabs } from "./app.js";
+  import { billView, recordView } from "./panels.js";
+  import { routeMap } from "./map.js";
+
+  const record = recordView();
+  const bill = billView();
+  const map = routeMap();
+  let id = "";
+
+  const wallHeader = h("div", { class: "wall-header" }, h("h1"), h("p", { class: "hint", text: "Press Esc to leave the wall display." }));
+  const refreshRoute = async () => {
+    if (!id) { map.setRoute(null, "Enter your patient ID to see your walking directions."); return; }
+    const p = await api.get(`/api/patient?id=${encodeURIComponent(id)}`).catch(() => null);
+    if (!p || !p.bed) {
+      map.setRoute(null, p && p.status === "Discharged" ? "You have been discharged; there is no bed to walk to."
+                                                        : "No bed is assigned yet. Directions appear here as soon as one is.");
+      wallHeader.firstChild.textContent = `Patient ${id}: no bed assigned yet`;
+      return;
+    }
+    const r = await api.get(`/api/route?id=${encodeURIComponent(id)}`).catch(() => null);
+    map.setRoute(r, r ? null : "No walking route could be found to the bed.");
+    wallHeader.firstChild.textContent = `Patient ${id}: walking directions to ${p.bed}`;
+  };
+  // A doctor admitting this patient on another device: show the route at once.
+  live.onRoute((d) => { if (d.patientId === id) refreshRoute(); });
+  live.on(["bedsChanged", "patientsChanged", "reloaded"], refreshRoute);
+
+  const search = h("form", { class: "row pad not-wall", novalidate: true },
+    h("label", { text: "Your patient ID" }), h("input", { name: "id", class: "id", autocapitalize: "characters", spellcheck: "false", autocomplete: "off", "aria-label": "Patient ID", placeholder: "VR-2026-000001", style: "max-width: 16em" }),
+    h("button", { class: "btn primary", type: "submit", text: "Show my record" }),
+    h("button", { class: "btn", type: "button", text: "Wall display (F11)", onclick: () => setWall(true) }));
+  const open = async (newId) => {
+    if (!newId) { message("Enter your patient ID, for example VR-2026-000001.", true); return; }
+    const p = await attempt(() => api.get(`/api/patient?id=${encodeURIComponent(newId)}`));
+    if (!p) return;
+    id = p.id;
+    search.elements.id.value = id;
+    history.replaceState(null, "", `?id=${encodeURIComponent(id)}`);
+    await Promise.all([record.show(id), bill.show(id), refreshRoute()]);
+  };
+  search.addEventListener("submit", (e) => { e.preventDefault(); open(field(search, "id")); });
+
+  const setWall = (on) => {
+    if (on && !id) { message("Enter a patient ID before opening the wall display.", true); return; }
+    if (on) sections.select(0);   // the wall shows the directions
+    document.body.classList.toggle("wall", on);
+    map.setWall(on);
+    if (on && document.documentElement.requestFullscreen && !document.fullscreenElement)
+      document.documentElement.requestFullscreen().catch(() => {});
+    if (!on && document.fullscreenElement) document.exitFullscreen().catch(() => {});
+  };
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "F11") { e.preventDefault(); setWall(!document.body.classList.contains("wall")); }
+    else if (e.key === "Escape" && document.body.classList.contains("wall")) setWall(false);
+  });
+  document.addEventListener("fullscreenchange", () => { if (!document.fullscreenElement && document.body.classList.contains("wall")) setWall(false); });
+
+  const sections = tabs([
+    { label: "Walking directions", build: () => h("div", { class: "pad" }, map.element) },
+    { label: "My record", build: () => h("div", { class: "pad" }, record.element) },
+    { label: "My bill", build: () => h("div", { class: "pad" }, bill.element) },
+  ]);
+  sections.element.firstChild.classList.add("not-wall");
+  page("Patient", h("div", {}, wallHeader, search, sections.element));
+
+  const start = new URLSearchParams(location.search).get("id");
+  if (start) open(start.trim()); else refreshRoute();
+</script>
+</body>
+</html>

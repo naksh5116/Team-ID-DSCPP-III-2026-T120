@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VitalRoute - Super Admin</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<noscript>VitalRoute needs JavaScript.</noscript>
+<script type="module">
+  import { api, attempt, h, live, message, page, tabs } from "./app.js";
+  import { admissionsPanel, billingPanel, doctorsPanel, indexesPanel, lookupPanel, registrationPanel,
+           staffPanel, theatresPanel, transferPanel, treatPanel } from "./panels.js";
+
+  const undo = h("button", { class: "btn", type: "button", text: "Undo last change" });
+  const undoNote = h("span", { class: "hint" });
+  const refreshUndo = async () => {
+    const s = await api.get("/api/state");
+    undo.disabled = !s.canUndo;
+    undoNote.textContent = s.canUndo ? `Undo: ${s.undoNote}` : "Nothing to undo.";
+  };
+  undo.addEventListener("click", async () => {
+    const s = await api.get("/api/state");
+    if (!s.canUndo) { message("Nothing to undo."); return; }
+    if (window.confirm(`Undo the last change?\n\n${s.undoNote}\n\nEvery open VitalRoute window sees the change.`))
+      attempt(() => api.post("/api/undo"));
+  });
+  const reload = () => {
+    if (window.confirm("Reload the records from the data folder?\n\nChanges that were not saved are lost, in every open VitalRoute window."))
+      attempt(() => api.post("/api/reload"));
+  };
+  live.on(["queueChanged", "patientsChanged", "bedsChanged", "billsChanged", "theatresChanged", "transfersChanged", "staffChanged", "reloaded"], refreshUndo);
+  refreshUndo();
+
+  const toolbar = h("div", { class: "row pad", style: "border-bottom: 1px solid var(--border); background: var(--panel)" },
+    undo,
+    h("button", { class: "btn", type: "button", text: "Save records", title: "Ctrl+S", onclick: () => attempt(() => api.post("/api/save")) }),
+    h("button", { class: "btn", type: "button", text: "Reload from disk", onclick: reload }),
+    undoNote);
+
+  page("Super Admin", h("div", {}, toolbar, tabs([
+    { label: "Registration", build: registrationPanel },
+    { label: "Treatment", build: treatPanel },
+    { label: "Patient record", build: lookupPanel },
+    { label: "Billing and discharge", build: billingPanel },
+    { label: "Operation theatres", build: theatresPanel },
+    { label: "Transfer desk", build: transferPanel },
+    { label: "Admissions by date", build: admissionsPanel },
+    { label: "Staff", build: staffPanel },
+    { label: "Indexes", build: indexesPanel },
+  ]).element));
+</script>
+</body>
+</html>
