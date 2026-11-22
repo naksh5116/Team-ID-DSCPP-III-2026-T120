@@ -1,0 +1,102 @@
+# VitalRoute hospital floor plan - three floors, 36 landmarks.
+#
+# Coordinates are metres on the floor plan; x grows east, y grows north.
+# Lift shafts and the stairwell sit at the same (x, y) on every floor.
+#
+# NODES
+# N <id> <floor> <x> <y> <type> <name with spaces>
+# types: JUNCTION CORRIDOR LIFT STAIRS WARD ICU OT ER RECEPTION
+#
+# EDGES  (undirected unless the line ends with D)
+# E <from> <to> <weight> <type>
+# types: CORRIDOR LIFT STAIRS DOOR
+# weight: metres walked; for LIFT edges, a time-equivalent in metres
+
+# ---- Ground floor (0): emergency, reception, acute medical unit --------
+N 0  0  0   0   ER        Central Emergency Room
+N 1  0  10  0   JUNCTION  ER Triage Desk
+N 2  0  22  0   CORRIDOR  Reception Corridor
+N 3  0  22  -10 RECEPTION Main Reception
+N 4  0  34  0   JUNCTION  Main Corridor Junction
+N 5  0  34  12  JUNCTION  Pharmacy Corner
+N 6  0  30  20  LIFT      Lift A Lobby (Ground Floor)
+N 7  0  48  0   CORRIDOR  East Corridor
+N 8  0  56  -6  JUNCTION  Radiology Bend
+N 9  0  62  -14 LIFT      Lift B Lobby (Ground Floor)
+N 10 0  48  14  STAIRS    Stairwell (Ground Floor)
+N 11 0  10  10  CORRIDOR  AMU Corridor
+N 12 0  16  18  WARD      Acute Medical Unit
+
+# ---- First floor (1): intensive care and operation theatres ------------
+N 13 1  30  20  LIFT      Lift A Lobby (Floor 1)
+N 14 1  62  -14 LIFT      Lift B Lobby (Floor 1)
+N 15 1  48  14  STAIRS    Stairwell (Floor 1)
+N 16 1  30  10  JUNCTION  Nursing Station 1A
+N 17 1  18  10  CORRIDOR  West Wing Corridor
+N 18 1  18  22  ICU       ICU-1
+N 19 1  8   4   JUNCTION  Critical Care Bend
+N 20 1  10  -8  ICU       ICU-2
+N 21 1  48  6   CORRIDOR  East Wing Corridor
+N 22 1  56  2   JUNCTION  Theatre Suite Junction
+N 23 1  56  14  OT        Operation Theatre 1
+N 24 1  66  2   OT        Operation Theatre 2
+N 25 1  62  -6  CORRIDOR  Theatre Corridor South
+
+# ---- Second floor (2): inpatient wards ----------------------------------
+N 26 2  30  20  LIFT      Lift A Lobby (Floor 2)
+N 27 2  62  -14 LIFT      Lift B Lobby (Floor 2)
+N 28 2  48  14  STAIRS    Stairwell (Floor 2)
+N 29 2  30  10  JUNCTION  Nursing Station 2A
+N 30 2  16  10  CORRIDOR  Ward Corridor West
+N 31 2  16  22  WARD      General Ward A
+N 32 2  48  4   JUNCTION  Nursing Station 2B
+N 33 2  48  -8  WARD      General Ward B
+N 34 2  58  0   CORRIDOR  Ward Corridor East
+N 35 2  62  8   WARD      General Ward C
+
+# ---- Ground floor corridors --------------------------------------------
+E 0  1  10 DOOR
+E 1  2  12 CORRIDOR
+E 2  3  10 DOOR
+E 2  4  12 CORRIDOR
+E 4  5  12 CORRIDOR
+E 5  6  9  CORRIDOR
+E 4  7  14 CORRIDOR
+E 7  8  10 CORRIDOR
+E 8  9  10 CORRIDOR
+E 7  10 14 CORRIDOR
+E 1  11 10 CORRIDOR
+E 11 12 10 DOOR
+
+# ---- First floor corridors ---------------------------------------------
+E 13 16 10 CORRIDOR
+E 16 17 12 CORRIDOR
+E 17 18 12 DOOR
+E 17 19 12 CORRIDOR
+E 19 20 12 DOOR
+E 16 21 18 CORRIDOR
+E 15 21 8  CORRIDOR
+E 21 22 9  CORRIDOR
+E 22 23 12 DOOR
+E 22 24 10 DOOR
+E 22 25 10 CORRIDOR
+E 25 14 8  CORRIDOR
+
+# ---- Second floor corridors --------------------------------------------
+E 26 29 10 CORRIDOR
+E 29 30 14 CORRIDOR
+E 30 31 12 DOOR
+E 29 32 19 CORRIDOR
+E 28 32 10 CORRIDOR
+E 32 33 12 DOOR
+E 32 34 11 CORRIDOR
+E 34 35 9  DOOR
+E 34 27 15 CORRIDOR
+
+# ---- Vertical links ----------------------------------------------------
+E 6  13 15 LIFT
+E 13 26 15 LIFT
+E 9  14 15 LIFT
+E 14 27 15 LIFT
+E 10 15 18 STAIRS
+E 15 28 18 STAIRS
