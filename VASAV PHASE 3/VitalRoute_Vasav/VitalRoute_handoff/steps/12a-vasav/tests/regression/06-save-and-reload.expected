@@ -1,0 +1,249 @@
+First run: sample patients and staff created (nothing saved yet).
+Floor plan: 36 landmarks on 3 floors, 8 ICU and 22 ward beds free, 2 operation theatres.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option: 
+Next patient: VR-2026-000004  Suresh Kumar, ESI 1 - Cardiac arrest, pulse restored in ambulance
+Attending: Dr. Meera Iyer from HH:MM
+Bed: ICU-1, Bed 1 (ICU)
+
+ROUTE: Central Emergency Room  ->  ICU-1, Bed 1
+------------------------------------------------------------
+ 1. From the Central Emergency Room, head towards ER Triage Desk
+ 2. Walk 34 m along the Reception Corridor
+ 3. Turn left at Main Corridor Junction
+ 4. Walk 12 m
+ 5. Bear slightly left at Pharmacy Corner
+ 6. Walk 9 m
+ 7. Take the lift to floor 1
+ 8. Exit the lift heading south towards Nursing Station 1A
+ 9. Walk 10 m
+10. Turn right at Nursing Station 1A
+11. Walk 12 m along the West Wing Corridor
+12. Turn right at the West Wing Corridor
+13. Walk 12 m
+14. Arrive at ICU-1, Bed 1 - on your left
+------------------------------------------------------------
+Total distance: 89 m      Estimated walking time: 74 s (1 min 14 s)
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 5 emergency, 2 OPD   (next: VR-2026-000007)
+Choose an option: 
+Next patient: VR-2026-000007  Lakshmi Pillai, ESI 1 - Stroke symptoms, onset 40 minutes ago
+Attending: Dr. Arjun Khanna from HH:MM
+Bed: ICU-1, Bed 2 (ICU)
+
+ROUTE: Central Emergency Room  ->  ICU-1, Bed 2
+------------------------------------------------------------
+ 1. From the Central Emergency Room, head towards ER Triage Desk
+ 2. Walk 34 m along the Reception Corridor
+ 3. Turn left at Main Corridor Junction
+ 4. Walk 12 m
+ 5. Bear slightly left at Pharmacy Corner
+ 6. Walk 9 m
+ 7. Take the lift to floor 1
+ 8. Exit the lift heading south towards Nursing Station 1A
+ 9. Walk 10 m
+10. Turn right at Nursing Station 1A
+11. Walk 12 m along the West Wing Corridor
+12. Turn right at the West Wing Corridor
+13. Walk 12 m
+14. Arrive at ICU-1, Bed 2 - on your right
+------------------------------------------------------------
+Total distance: 89 m      Estimated walking time: 74 s (1 min 14 s)
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 4 emergency, 2 OPD   (next: VR-2026-000006)
+Choose an option: Saved 11 patients, 9 staff, 10 visits, 11 bills (12 charges) to data/records/
+Goodbye.
+----- restart -----
+Loaded 11 patients, 9 staff, 10 visits and 11 bills from data/records/
+Floor plan: 36 landmarks on 3 floors, 6 ICU and 22 ward beds free, 2 operation theatres.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 4 emergency, 2 OPD   (next: VR-2026-000006)
+Choose an option: Patient ID (e.g. VR-2026-000001): 
+VR-2026-000004  Suresh Kumar (67), Emergency patient, tel 98110-20001, ESI 1, ADMITTED (ICU-1, Bed 1)
+  Complaint : Cardiac arrest, pulse restored in ambulance
+  Registered: YYYY-MM-DD
+  Bed       : ICU-1, Bed 1
+  Doctor    : Dr. Meera Iyer (Emergency Medicine)
+  Bill      : BL-000004, Rs 8400.00 due
+  Visit history, newest first (1):
+    YYYY-MM-DD  Dr. Meera Iyer
+      Emergency (ESI 1): Cardiac arrest, pulse restored in ambulance
+      Rx: Admitted to ICU-1, Bed 1
+  [hash index: 11 entries in 16 buckets, load 0.69, 2 collisions, 0 resizes]
+Add a visit note (y/n): 
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 4 emergency, 2 OPD   (next: VR-2026-000006)
+Choose an option: 
+Next patient: VR-2026-000006  Mohammed Imran, ESI 2 - Severe asthma attack, poor response to inhaler
+Attending: Dr. Meera Iyer from HH:MM
+Bed: ICU-1, Bed 3 (ICU)
+
+ROUTE: Central Emergency Room  ->  ICU-1, Bed 3
+------------------------------------------------------------
+ 1. From the Central Emergency Room, head towards ER Triage Desk
+ 2. Walk 34 m along the Reception Corridor
+ 3. Turn left at Main Corridor Junction
+ 4. Walk 12 m
+ 5. Bear slightly left at Pharmacy Corner
+ 6. Walk 9 m
+ 7. Take the lift to floor 1
+ 8. Exit the lift heading south towards Nursing Station 1A
+ 9. Walk 10 m
+10. Turn right at Nursing Station 1A
+11. Walk 12 m along the West Wing Corridor
+12. Turn right at the West Wing Corridor
+13. Walk 12 m
+14. Arrive at ICU-1, Bed 3 - on your left
+------------------------------------------------------------
+Total distance: 89 m      Estimated walking time: 74 s (1 min 14 s)
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 3 emergency, 2 OPD   (next: VR-2026-000008)
+Choose an option: Patient ID (blank to list every bill):   Sort bills by:
+    1. Date opened
+    2. Amount
+  Choice: 
+  BL-000001  VR-2026-000001  YYYY-MM-DD     Rs 11250.00  settled
+  BL-000002  VR-2026-000002  YYYY-MM-DD      Rs 7250.00  settled
+  BL-000003  VR-2026-000003  YYYY-MM-DD      Rs 9750.00  settled
+  BL-000004  VR-2026-000004  YYYY-MM-DD     Rs 10500.00  open
+  BL-000005  VR-2026-000005  YYYY-MM-DD         Rs 0.00  open
+  BL-000006  VR-2026-000006  YYYY-MM-DD     Rs 10500.00  open
+  BL-000007  VR-2026-000007  YYYY-MM-DD     Rs 10500.00  open
+  BL-000008  VR-2026-000008  YYYY-MM-DD         Rs 0.00  open
+  BL-000009  VR-2026-000009  YYYY-MM-DD         Rs 0.00  open
+  BL-000010  VR-2026-000010  YYYY-MM-DD         Rs 0.00  open
+  BL-000011  VR-2026-000011  YYYY-MM-DD         Rs 0.00  open
+  (11 bills, merge-sorted)
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 3 emergency, 2 OPD   (next: VR-2026-000008)
+Choose an option:   Specialty:
+    1. Cardiology
+    2. Emergency Medicine
+    3. General Medicine
+    4. Orthopaedics
+  Choice: 
+Next available in Cardiology: Dr. Rohan Mehta - free now
+
+  Availability array (sorted by specialty, then next-free time):
+    Emergency Medicine  Dr. Arjun Khanna      busy until HH:MM   seen 1
+    Emergency Medicine  Dr. Meera Iyer        busy until HH:MM   seen 2
+    General Medicine    Dr. Farah Siddiqui    free now   seen 0
+    General Medicine    Dr. Sameer Gupta      free now   seen 0
+    Cardiology          Dr. Rohan Mehta       free now   seen 0
+    Orthopaedics        Dr. Kavita Rao        free now   seen 0
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 3 emergency, 2 OPD   (next: VR-2026-000008)
+Choose an option: Saved 11 patients, 9 staff, 11 visits, 11 bills (15 charges) to data/records/
+Goodbye.

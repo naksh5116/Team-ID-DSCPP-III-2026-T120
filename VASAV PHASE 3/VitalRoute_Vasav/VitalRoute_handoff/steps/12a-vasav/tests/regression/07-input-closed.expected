@@ -1,0 +1,22 @@
+First run: sample patients and staff created (nothing saved yet).
+Floor plan: 36 landmarks on 3 floors, 8 ICU and 22 ward beds free, 2 operation theatres.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option: 
+-- Register emergency patient --
+  Name:   Age: 
+Input closed - exiting without saving.

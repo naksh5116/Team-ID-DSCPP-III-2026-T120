@@ -1,0 +1,231 @@
+First run: sample patients and staff created (nothing saved yet).
+Floor plan: 36 landmarks on 3 floors, 8 ICU and 22 ward beds free, 2 operation theatres.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option: 
+-- Register emergency patient --
+  Name:   This field is required.
+  Name:   Age:   Please enter a whole number from 0 to 130.
+  Age:   Phone (optional):   Presenting complaint:   Severity, ESI 1 (most critical) to 5:   Does the patient have insurance? (y/n):   Insurer:   Policy number:   Cover type:
+    1. Flat amount
+    2. Percentage of the bill
+  Choice:   Percentage covered (0-100):   Maximum payout in Rs (0 = no limit):   Insurance recorded; it is deducted once, when the bill is settled.
+Registered VR-2026-000012 (ESI 2). Position in the emergency queue: 4 of 7.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 7 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option: 
+-- Register outpatient (OPD) --
+  Name:   Age:   Phone (optional):   Reason for visit:   Department:
+    1. Cardiology
+    2. General Medicine
+    3. Orthopaedics
+  Choice:   Does the patient have insurance? (y/n): Registered VR-2026-000013 for General Medicine. Position in the OPD line: 3.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 7 emergency, 3 OPD   (next: VR-2026-000004)
+Choose an option: 
+-- Register emergency patient --
+  Name:   Age:   Phone (optional):   Presenting complaint:   Severity, ESI 1 (most critical) to 5: Registration cancelled: severity 9 is outside the ESI range 1 (most critical) to 5.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 7 emergency, 3 OPD   (next: VR-2026-000004)
+Choose an option: Please choose 1-12.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 7 emergency, 3 OPD   (next: VR-2026-000004)
+Choose an option: Please choose 1-12.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 7 emergency, 3 OPD   (next: VR-2026-000004)
+Choose an option: Undone: registration of Walk In (VR-2026-000013).
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 7 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option: Undone: registration of Test Patient (VR-2026-000012).
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option: Nothing to undo.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option: From date [YYYY-MM-DD]: To date [YYYY-MM-DD]: 
+10 patient(s) registered YYYY-MM-DD to YYYY-MM-DD:
+  YYYY-MM-DD  VR-2026-000002  Arnav Bose           EMERGENCY  DISCHARGED
+  YYYY-MM-DD  VR-2026-000003  Sunita Yadav         EMERGENCY  DISCHARGED
+  YYYY-MM-DD  VR-2026-000004  Suresh Kumar         EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000005  Ananya Sharma        EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000006  Mohammed Imran       EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000007  Lakshmi Pillai       EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000008  Vikram Singh         EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000009  Neha Joshi           EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000010  Ramesh Gupta               OPD  WAITING
+  YYYY-MM-DD  VR-2026-000011  Pooja Menon                OPD  WAITING
+  [AVL index: 4 dates, height 3, rotations LL 0 RR 1 LR 0 RL 0]
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option: From date [YYYY-MM-DD]:   Dates look like YYYY-MM-DD or 20260930.
+From date [YYYY-MM-DD]: To date [YYYY-MM-DD]: 
+10 patient(s) registered YYYY-MM-DD to YYYY-MM-DD:
+  YYYY-MM-DD  VR-2026-000002  Arnav Bose           EMERGENCY  DISCHARGED
+  YYYY-MM-DD  VR-2026-000003  Sunita Yadav         EMERGENCY  DISCHARGED
+  YYYY-MM-DD  VR-2026-000004  Suresh Kumar         EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000005  Ananya Sharma        EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000006  Mohammed Imran       EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000007  Lakshmi Pillai       EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000008  Vikram Singh         EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000009  Neha Joshi           EMERGENCY  WAITING
+  YYYY-MM-DD  VR-2026-000010  Ramesh Gupta               OPD  WAITING
+  YYYY-MM-DD  VR-2026-000011  Pooja Menon                OPD  WAITING
+  [AVL index: 4 dates, height 3, rotations LL 0 RR 1 LR 0 RL 0]
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option: Saved 11 patients, 9 staff, 8 visits, 11 bills (6 charges) to data/records/
+Goodbye.

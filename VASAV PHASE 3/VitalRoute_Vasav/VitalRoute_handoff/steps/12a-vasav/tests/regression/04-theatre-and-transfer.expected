@@ -1,0 +1,510 @@
+First run: sample patients and staff created (nothing saved yet).
+Floor plan: 36 landmarks on 3 floors, 8 ICU and 22 ward beds free, 2 operation theatres.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Operation theatres:
+    1. View today's schedule
+    2. Book the next free slot
+    3. Release a slot
+    4. Back
+  Choice: 
+ OT-1  (8 of 8 slots free; ring head=0 tail=0 count=8)
+    1. HH:MM-HH:MM  free
+    2. HH:MM-HH:MM  free
+    3. HH:MM-HH:MM  free
+    4. HH:MM-HH:MM  free
+    5. HH:MM-HH:MM  free
+    6. HH:MM-HH:MM  free
+    7. HH:MM-HH:MM  free
+    8. HH:MM-HH:MM  free
+   next free in cycle order: 1 2 3 4 5 6 7 8
+
+ OT-2  (8 of 8 slots free; ring head=0 tail=0 count=8)
+    1. HH:MM-HH:MM  free
+    2. HH:MM-HH:MM  free
+    3. HH:MM-HH:MM  free
+    4. HH:MM-HH:MM  free
+    5. HH:MM-HH:MM  free
+    6. HH:MM-HH:MM  free
+    7. HH:MM-HH:MM  free
+    8. HH:MM-HH:MM  free
+   next free in cycle order: 1 2 3 4 5 6 7 8
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Operation theatres:
+    1. View today's schedule
+    2. Book the next free slot
+    3. Release a slot
+    4. Back
+  Choice:   Theatre:
+    1. OT-1
+    2. OT-2
+  Choice:   Patient ID:   Procedure:   Surgeon's fee (Rs): Booked OT-1 slot 1, HH:MM-HH:MM for Suresh Kumar.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Operation theatres:
+    1. View today's schedule
+    2. Book the next free slot
+    3. Release a slot
+    4. Back
+  Choice:   Theatre:
+    1. OT-1
+    2. OT-2
+  Choice:   Patient ID: Not found: no patient with ID VR-2026-999999.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Operation theatres:
+    1. View today's schedule
+    2. Book the next free slot
+    3. Release a slot
+    4. Back
+  Choice:   Theatre:
+    1. OT-1
+    2. OT-2
+  Choice:   Slot number: Released OT-1 slot 1; it is back in the free-slot ring.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Operation theatres:
+    1. View today's schedule
+    2. Book the next free slot
+    3. Release a slot
+    4. Back
+  Choice:   Theatre:
+    1. OT-1
+    2. OT-2
+  Choice:   Slot number: Theatre: slot 1 in OT-1 is not booked.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Operation theatres:
+    1. View today's schedule
+    2. Book the next free slot
+    3. Release a slot
+    4. Back
+  Choice: 
+ OT-1  (8 of 8 slots free; ring head=1 tail=1 count=8)
+    1. HH:MM-HH:MM  free
+    2. HH:MM-HH:MM  free
+    3. HH:MM-HH:MM  free
+    4. HH:MM-HH:MM  free
+    5. HH:MM-HH:MM  free
+    6. HH:MM-HH:MM  free
+    7. HH:MM-HH:MM  free
+    8. HH:MM-HH:MM  free
+   next free in cycle order: 2 3 4 5 6 7 8 1
+
+ OT-2  (8 of 8 slots free; ring head=0 tail=0 count=8)
+    1. HH:MM-HH:MM  free
+    2. HH:MM-HH:MM  free
+    3. HH:MM-HH:MM  free
+    4. HH:MM-HH:MM  free
+    5. HH:MM-HH:MM  free
+    6. HH:MM-HH:MM  free
+    7. HH:MM-HH:MM  free
+    8. HH:MM-HH:MM  free
+   next free in cycle order: 1 2 3 4 5 6 7 8
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Operation theatres:
+    1. View today's schedule
+    2. Book the next free slot
+    3. Release a slot
+    4. Back
+  Choice: 
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Ambulance and transfer desk:
+    1. New URGENT request (front of the line)
+    2. New routine request (back of the line)
+    3. Dispatch the next request
+    4. Cancel the newest routine request
+    5. List pending requests
+    6. Back
+  Choice:   Type:
+    1. Ambulance
+    2. Internal transfer
+  Choice:   Patient ID (blank if not registered yet):   From:   To: Queued TR-0001  URGENT   ambulance  Highway 7 accident site -> Central Emergency Room  (VR-2026-000005)
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Ambulance and transfer desk:
+    1. New URGENT request (front of the line)
+    2. New routine request (back of the line)
+    3. Dispatch the next request
+    4. Cancel the newest routine request
+    5. List pending requests
+    6. Back
+  Choice:   Type:
+    1. Ambulance
+    2. Internal transfer
+  Choice:   Patient ID (blank if not registered yet):   From:   To: Queued TR-0002  routine  transfer   General Ward A -> Radiology
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Ambulance and transfer desk:
+    1. New URGENT request (front of the line)
+    2. New routine request (back of the line)
+    3. Dispatch the next request
+    4. Cancel the newest routine request
+    5. List pending requests
+    6. Back
+  Choice:   Type:
+    1. Ambulance
+    2. Internal transfer
+  Choice:   Patient ID (blank if not registered yet):   From:   To: Queued TR-0003  routine  ambulance  Home -> Central Emergency Room  (VR-2026-000006)
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Ambulance and transfer desk:
+    1. New URGENT request (front of the line)
+    2. New routine request (back of the line)
+    3. Dispatch the next request
+    4. Cancel the newest routine request
+    5. List pending requests
+    6. Back
+  Choice: 3 pending (served from the top):
+  TR-0001  URGENT   ambulance  Highway 7 accident site -> Central Emergency Room  (VR-2026-000005)
+  TR-0002  routine  transfer   General Ward A -> Radiology
+  TR-0003  routine  ambulance  Home -> Central Emergency Room  (VR-2026-000006)
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Ambulance and transfer desk:
+    1. New URGENT request (front of the line)
+    2. New routine request (back of the line)
+    3. Dispatch the next request
+    4. Cancel the newest routine request
+    5. List pending requests
+    6. Back
+  Choice: Cancelled TR-0003  routine  ambulance  Home -> Central Emergency Room  (VR-2026-000006)
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Ambulance and transfer desk:
+    1. New URGENT request (front of the line)
+    2. New routine request (back of the line)
+    3. Dispatch the next request
+    4. Cancel the newest routine request
+    5. List pending requests
+    6. Back
+  Choice: Dispatched TR-0001  URGENT   ambulance  Highway 7 accident site -> Central Emergency Room  (VR-2026-000005)
+Ambulance charge added to BL-000005.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Ambulance and transfer desk:
+    1. New URGENT request (front of the line)
+    2. New routine request (back of the line)
+    3. Dispatch the next request
+    4. Cancel the newest routine request
+    5. List pending requests
+    6. Back
+  Choice: Dispatched TR-0002  routine  transfer   General Ward A -> Radiology
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Ambulance and transfer desk:
+    1. New URGENT request (front of the line)
+    2. New routine request (back of the line)
+    3. Dispatch the next request
+    4. Cancel the newest routine request
+    5. List pending requests
+    6. Back
+  Choice: No pending requests.
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Ambulance and transfer desk:
+    1. New URGENT request (front of the line)
+    2. New routine request (back of the line)
+    3. Dispatch the next request
+    4. Cancel the newest routine request
+    5. List pending requests
+    6. Back
+  Choice: The newest request is not a routine one (or none is pending).
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Ambulance and transfer desk:
+    1. New URGENT request (front of the line)
+    2. New routine request (back of the line)
+    3. Dispatch the next request
+    4. Cancel the newest routine request
+    5. List pending requests
+    6. Back
+  Choice: 
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option:   Specialty:
+    1. Cardiology
+    2. Emergency Medicine
+    3. General Medicine
+    4. Orthopaedics
+  Choice: 
+Next available in Emergency Medicine: Dr. Meera Iyer - free now
+
+  Availability array (sorted by specialty, then next-free time):
+    Emergency Medicine  Dr. Meera Iyer        free now   seen 0
+    Emergency Medicine  Dr. Arjun Khanna      free now   seen 0
+    General Medicine    Dr. Farah Siddiqui    free now   seen 0
+    General Medicine    Dr. Sameer Gupta      free now   seen 0
+    Cardiology          Dr. Rohan Mehta       free now   seen 0
+    Orthopaedics        Dr. Kavita Rao        free now   seen 0
+
+=========== VitalRoute ===========
+ 1. Register patient (emergency)
+ 2. Register patient (OPD)
+ 3. Treat next patient
+ 4. Look up patient by ID
+ 5. Patients admitted between two dates
+ 6. Find next available doctor
+ 7. Operation theatre schedule
+ 8. Ambulance / transfer requests
+ 9. View or edit a bill
+10. Discharge and settle bill
+11. Undo last entry
+12. Save and exit
+==================================
+ Waiting: 6 emergency, 2 OPD   (next: VR-2026-000004)
+Choose an option: Saved 11 patients, 9 staff, 8 visits, 11 bills (8 charges) to data/records/
+Goodbye.
